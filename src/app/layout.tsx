@@ -32,7 +32,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Groozil Admin Panel",
-  description: "Groozil Admin Panel",
+  description: "Groozil Admin Panel Dashboard",
 };
 
 export default function RootLayout({
