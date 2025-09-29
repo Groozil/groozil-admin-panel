@@ -27,6 +27,16 @@ body {
   font-family: var(--font-roboto);
 }
 
+/* globals.css */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+
 /* @font-face {
   font-family: "Soehne Kraftig";
   src: url("/assets/fonts/sohne/soehne-kraftig.woff2") format("woff2"),

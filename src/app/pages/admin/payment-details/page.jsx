@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import Navbar from "../../../components/Navbar";
-import Sidebar from "@/app/components/Sidebar";
+import Navbar from "../../../../components/Navbar";
+import Sidebar from "../../../../components/Sidebar";
 import UserWallet from "./components/UserWallet";
 import Refunds from "./components/Refunds";
 import {

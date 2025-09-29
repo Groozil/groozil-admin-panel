@@ -1,24 +1,19 @@
 "use client";
 import { useState } from "react";
-import Navbar from "../../../components/Navbar";
-import Sidebar from "@/app/components/Sidebar";
+import Navbar from "../../../../components/Navbar";
+import Sidebar from "../../../../components/Sidebar";
+import SubcategoryForm from "./models/Subcategory_Form";
 import {
-  ChevronDown,
   MoreHorizontal,
-  Users,
-  Truck,
-  ShoppingBasket,
-  DollarSign,
   MoveLeft,
   MoveRight,
   Plus,
-  Upload,
   Search,
 } from "lucide-react";
-import Image from "next/image";
 
 const page = () => {
   const [statusFilter, setStatusFilter] = useState("All");
+  const [isAddSubcategory, setIsAddSubcategory] = useState(false);
 
   const customers = [
     {
@@ -53,9 +48,11 @@ const page = () => {
     },
   ];
 
-
   return (
     <div className="min-h-screen bg-[#EEF2F6] text-[#212529] flex">
+      {isAddSubcategory && (
+        <SubcategoryForm setIsAddSubcategory={setIsAddSubcategory} />
+      )}
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Navbar
@@ -64,7 +61,6 @@ const page = () => {
         />
 
         <main className="p-6 space-y-6">
-
           <div className="p-6 bg-[#EEF2F6] rounded-xl shadow-md">
             {/* Title */}
             <h2 className="text-xl font-semibold text-gray-800 mb-4">
@@ -96,7 +92,10 @@ const page = () => {
                 </select>
 
                 {/* Add Button */}
-                <button className="flex items-center px-4 py-2 bg-[#F46609] hover:bg-[#cf6f2e] text-white rounded-lg shadow-sm transition">
+                <button
+                  onClick={() => setIsAddSubcategory(true)}
+                  className="flex items-center px-4 py-2 bg-[#F46609] hover:bg-[#cf6f2e] text-white rounded-lg shadow-sm transition cursor-pointer"
+                >
                   <Plus className="w-5 h-5" /> Add Subcategory
                 </button>
               </div>
@@ -122,7 +121,9 @@ const page = () => {
                       key={c.id}
                       className="border-t border-gray-200 bg-white hover:bg-gray-50 transition"
                     >
-                      <td className="p-3 font-medium text-gray-800">Fresh Fruits</td>
+                      <td className="p-3 font-medium text-gray-800">
+                        Fresh Fruits
+                      </td>
                       <td className="p-3">
                         <div className="flex items-center gap-1">
                           <div>
@@ -141,7 +142,7 @@ const page = () => {
                               : "bg-red-100 text-red-700"
                           }`}
                         >
-                         123
+                          123
                         </span>
                       </td>
                       <td className="p-3 text-gray-600">{c.status}</td>

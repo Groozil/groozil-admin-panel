@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import Sidebar from "../../components/Sidebar";
-import Navbar from "../../components/Navbar";
+import Sidebar from "../../../components/Sidebar";
+import Navbar from "../../../components/Navbar";
 import { Users, Truck, ShoppingBasket, DollarSign } from "lucide-react";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import TrendingProducts from "../../components/TrendingProducts";
+import TrendingProducts from "../../../components/TrendingProducts";
 import {
   Chart as ChartJS,
   CategoryScale,

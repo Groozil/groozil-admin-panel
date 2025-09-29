@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Navbar from "../../../components/Navbar";
-import Sidebar from "@/app/components/Sidebar";
+import Navbar from "../../../../components/Navbar";
+import Sidebar from "../../../../components/Sidebar";
+import CategoryForm from "./models/Category_Form";
 import {
-  ChevronDown,
   MoreHorizontal,
   Users,
   Truck,
@@ -12,13 +12,12 @@ import {
   MoveLeft,
   MoveRight,
   Plus,
-  Upload,
   Search,
 } from "lucide-react";
-import Image from "next/image";
 
 const page = () => {
   const [statusFilter, setStatusFilter] = useState("All");
+  const [isAddCategory, setIsAddCategory] = useState(false);
 
   const customers = [
     {
@@ -86,6 +85,7 @@ const page = () => {
   ];
   return (
     <div className="min-h-screen bg-[#EEF2F6] text-[#212529] flex">
+      {isAddCategory && <CategoryForm setIsAddCategory={setIsAddCategory} />}
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Navbar
@@ -165,7 +165,10 @@ const page = () => {
                 </select>
 
                 {/* Add Button */}
-                <button className="flex items-center px-4 py-2 bg-[#F46609] hover:bg-[#cf6f2e] text-white rounded-lg shadow-sm transition">
+                <button
+                  onClick={() => setIsAddCategory(true)}
+                  className="flex items-center px-4 py-2 bg-[#F46609] hover:bg-[#cf6f2e] text-white rounded-lg shadow-sm transition cursor-pointer"
+                >
                   <Plus className="w-5 h-5" /> Add Category
                 </button>
               </div>
@@ -210,7 +213,7 @@ const page = () => {
                               : "bg-red-100 text-red-700"
                           }`}
                         >
-                         123
+                          123
                         </span>
                       </td>
                       <td className="p-3 text-gray-600">{c.status}</td>

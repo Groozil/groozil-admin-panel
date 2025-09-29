@@ -1,13 +1,20 @@
 import React from "react";
-import { Settings, Bell } from "lucide-react";
+import { Settings, Bell, ArrowLeft } from "lucide-react";
 import UserDropdown from "./UserDropdown";
 
 const Navbar = ({ collapsed, title, subTitle }) => {
   return (
     <header className="flex items-center justify-between px-6 bg-white shadow-sm">
-      <div>
-        <h1 className="text-2xl font-semibold">{title}</h1>
-        <p className="text-sm text-gray-500">{subTitle}</p>
+      <div className="flex items-center gap-2">
+        {title.includes("Driver") && (
+          <button className="p-2 rounded-full bg-gray-100">
+            <ArrowLeft />
+          </button>
+        )}
+        <div>
+          <h1 className="text-2xl font-semibold">{title}</h1>
+          <p className="text-sm text-gray-500">{subTitle}</p>
+        </div>
       </div>
 
       <div className="flex items-center gap-4">

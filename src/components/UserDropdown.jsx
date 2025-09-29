@@ -20,9 +20,7 @@ const UserDropdown = ({ collapsed }) => {
   return (
     <div className="relative" ref={dropdownRef}>
       {/* Avatar + Info */}
-      <div
-        className="flex items-center justify-between p-2 rounded-md"
-      >
+      <div className="flex items-center justify-between p-2 rounded-md">
         <div className="flex items-center">
           <img
             src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png"
@@ -53,19 +51,28 @@ const UserDropdown = ({ collapsed }) => {
         <div className="absolute left-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
           <ul className="py-2 text-sm text-gray-700">
             <li>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                Profile
+              <a
+                href="/pages/admin/profile"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                Block User
               </a>
             </li>
             <li>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                Settings
+              <a
+                href="/pages/admin/settings"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                Reset User
               </a>
             </li>
             <li>
-              <button className="w-full text-left px-4 py-2 hover:bg-gray-100">
-                Logout
-              </button>
+              <a
+                href="/pages/admin/profile"
+                className="w-full text-left px-4 py-2 hover:bg-gray-100"
+              >
+                View Profile
+              </a>
             </li>
           </ul>
         </div>

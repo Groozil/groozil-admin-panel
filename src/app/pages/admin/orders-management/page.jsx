@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
-import Navbar from "../../../components/Navbar";
-import Sidebar from "@/app/components/Sidebar";
+import Navbar from "../../../../components/Navbar";
+import Sidebar from "../../../../components/Sidebar";
 import {
-  ChevronDown,
   MoreHorizontal,
   Users,
   Truck,
@@ -11,11 +10,8 @@ import {
   DollarSign,
   MoveLeft,
   MoveRight,
-  Plus,
-  Upload,
   Search,
 } from "lucide-react";
-import Image from "next/image";
 
 const page = () => {
   const [statusFilter, setStatusFilter] = useState("All");
@@ -166,7 +162,6 @@ const page = () => {
               </div>
             </div>
 
-            {/* Table */}
             {/* Table */}
             <div className="overflow-x-auto rounded-xl shadow-md border border-gray-200">
               <table className="w-full border-collapse text-sm">
